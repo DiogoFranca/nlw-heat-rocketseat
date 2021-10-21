@@ -1,5 +1,5 @@
 const links = {
-  github: "diogoFranca",
+  github: "DiogoFranca",
   youtube: "horizon",
   instagram: "diogofranca20021",
   facebook: "maykbrito",
@@ -15,4 +15,21 @@ function changeSocialMediaLinks() {
 }
 
 changeSocialMediaLinks();
+
+function getGitHubProfileInfos() {
+  const url = `https://api.github.com/users/${links.github}`;
+
+  fetch(url)
+  .then( response => response.json())
+  .then(data => {
+    // document.querySelector('#userName').
+    userName.textContent = data.name;
+    userBio.textContent = data.bio;
+    userLink.href = data.html_url;
+    userImage.src = data.avatar_url;
+    userLogin.textContent = data.login;
+  })
+}
+
+getGitHubProfileInfos();
 
