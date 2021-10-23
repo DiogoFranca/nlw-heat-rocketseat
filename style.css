@@ -1,19 +1,18 @@
 * {
   margin: 0;
 }
-html, body {
+html,
+body {
   --black: hsl(240, 6%, 13%);
   --grey: hsl(240, 9%, 89%);
   height: 100%;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
   display: grid;
   place-items: center;
-
-  background: lightblue;
 }
 
 main {
@@ -83,3 +82,58 @@ ul {
   justify-content: center;
 }
 
+.faixa-quebra {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  body {
+    background: #121214 url(imagens/Desktop.svg) no-repeat center;
+  }
+
+  main {
+    position: relative;
+    background: url(imagens/background.svg) no-repeat center;
+    width: 22rem;
+    min-height: 540px;
+    height: 34rem;
+  }
+
+  .container {
+    position: absolute;
+    top: -7.9rem;
+    max-width: none;
+  }
+
+  .container ul {
+    margin: 2.5rem auto 2rem;
+  }
+
+  .faixa-quebra {
+    display: flex;
+    position: absolute;
+    width: 5rem;
+    height: 11.9rem;
+    top: -1.9rem;
+    left: 8.7rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .faixa {
+    height: 9.9rem;
+    width: 4rem;
+    background: linear-gradient(161.24deg, #FF008E -15.25%, #FFCD1E 111.89%);
+    border: none;
+  }
+
+  .quebra {
+    width: 5rem;
+    height: 0.5rem;
+    background: hsla(240, 6%, 8%, 1);
+    border: none;
+  }
+
+
+}
